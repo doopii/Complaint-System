@@ -71,6 +71,9 @@ php artisan serve
 
 Visit `http://localhost:8000` to access the application.
 
+<img width="1893" height="898" alt="image" src="https://github.com/user-attachments/assets/765d085e-77af-47da-9f22-c80b7c276b47" />
+
+
 ## License
 
 This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
