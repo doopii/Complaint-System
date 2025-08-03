@@ -1,0 +1,142 @@
+/* =============================================================================
+   REGISTRATION PAGE STYLES
+   ============================================================================= */
+/* This file contains styles specific to the registration page.
+   Managed by: Student Complaint Handler (Member 2) */
+
+/* =============================================================================
+   ACCOUNT TYPE SELECTOR
+   ============================================================================= */
+
+.account-type-selector {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.account-type-selector h3 {
+    color: var(--form-label);
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.role-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.role-card {
+    /* Iconic FixIt Button Style - Same as Navbar */
+    background: var(--theme-gray) !important;
+    color: var(--theme-black) !important;
+    border: 2.5px solid var(--theme-border) !important;
+    border-bottom: 5px solid var(--theme-shadow) !important;
+    border-radius: 0;
+    text-shadow: none;
+    
+    /* Card-specific sizing and layout */
+    padding: 20px 15px 17px 15px; /* Adjusted for border-bottom */
+    min-width: 160px;
+    cursor: pointer;
+    transition: background 0.11s, color 0.11s, border 0.11s, box-shadow 0.11s, top 0.09s;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    top: 0;
+}
+
+.role-card:hover {
+    background: var(--theme-purple) !important;
+    color: #fff !important;
+    border-color: var(--theme-purple-dark) !important;
+    border-bottom: 5px solid var(--theme-purple-dark) !important;
+    box-shadow: 0 3px 0 var(--theme-purple-dark), 2px 2px 0 #fff;
+    top: 2px;
+}
+
+.role-card.active {
+    background: var(--theme-purple) !important;
+    color: #fff !important;
+    border-color: var(--theme-purple-dark) !important;
+    border-bottom: 5px solid var(--theme-purple-dark) !important;
+    box-shadow: 0 3px 0 var(--theme-purple-dark), 2px 2px 0 #fff;
+    top: 2px;
+}
+
+.role-card.active::before {
+    content: '✓';
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: white;
+    color: var(--theme-purple);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid var(--theme-purple);
+}
+
+.role-card:active {
+    background: var(--theme-purple-dark) !important;
+    color: #fff !important;
+    box-shadow: 0 1.5px 0 var(--theme-purple-dark);
+    top: 3px;
+}
+
+.role-icon {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.role-title {
+    font-size: 1.13rem; /* Same as navbar buttons */
+    font-weight: 700; /* Same as navbar buttons */
+    color: var(--theme-black);
+    margin-bottom: 8px;
+    letter-spacing: 1.3px; /* Same as navbar buttons */
+    font-family: inherit;
+}
+
+.role-card.active .role-title,
+.role-card:hover .role-title {
+    color: #fff;
+}
+
+.role-desc {
+    font-size: 0.75em;
+    color: var(--theme-black);
+    line-height: 1.3;
+    font-weight: normal;
+}
+
+.role-card.active .role-desc,
+.role-card:hover .role-desc {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================= */
+
+@media (max-width: 480px) {
+    .role-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .role-card {
+        min-width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
+
+/* This file is ready for any additional registration-specific styles. */
