@@ -1,0 +1,357 @@
+/* =============================================================================
+   STUDENT COMPLAINT DETAIL PAGE STYLES
+   ============================================================================= */
+/* This file contains styles specific to complaint detail/view pages.
+   Managed by: Student Complaint Handler (Member 2) */
+
+
+/* 
+   =============================================================================
+   STATUS TIMELINE COMPONENT
+   ============================================================================= */
+
+.status-timeline {
+    background: var(--form-bg);
+    border: 1px solid var(--form-border);
+    border-radius: 8px;
+    padding: 24px 32px;
+    margin-bottom: 20px;
+}
+
+.timeline-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timeline-title {
+    color: var(--form-label);
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 0;
+}
+
+.timeline-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin: 20px 0;
+}
+
+/* Progress line behind steps */
+.timeline-line {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    right: 40px;
+    height: 4px;
+    background: var(--form-border);
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.timeline-progress {
+    height: 100%;
+    background: var(--theme-purple);
+    border-radius: 2px;
+    transition: width 0.5s ease;
+}
+
+/* Timeline steps */
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+
+.step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    border: 3px solid var(--form-border);
+    background: var(--form-bg);
+    color: var(--form-label);
+}
+
+.step-circle.completed {
+    background: var(--theme-purple);
+    border-color: var(--theme-purple);
+    color: white;
+}
+
+.step-circle.current {
+    background: var(--theme-purple);
+    border-color: var(--theme-purple);
+    color: white;
+    box-shadow: 0 0 0 4px rgba(116, 94, 255, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 4px rgba(116, 94, 255, 0.3); }
+    50% { box-shadow: 0 0 0 8px rgba(116, 94, 255, 0.1); }
+    100% { box-shadow: 0 0 0 4px rgba(116, 94, 255, 0.3); }
+}
+
+.step-label {
+    margin-top: 8px;
+    font-size: 0.85em;
+    color: var(--color-accent-light);
+    text-align: center;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.step-label.completed,
+.step-label.current {
+    color: var(--form-label);
+}
+
+.step-date {
+    margin-top: 4px;
+    font-size: 0.75em;
+    color: var(--color-accent-light);
+    text-align: center;
+}
+
+/* Current status display */
+.current-status {
+    text-align: center;
+    margin-top: 16px;
+}
+
+/* Responsive design for timeline */
+@media (max-width: 768px) {
+    .timeline-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .timeline-line {
+        display: none;
+    }
+    
+    .timeline-step {
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+    
+    .step-label,
+    .step-date {
+        margin-top: 0;
+        text-align: left;
+    }
+    
+    .step-circle {
+        flex-shrink: 0;
+    }
+}
+
+/* =============================================================================
+   COMMENTS SECTION
+   ============================================================================= */
+
+/* Comment Section Wrapper */
+.comment-section-wrapper {
+    max-width: 540px;
+    margin: 30px auto;
+    background: var(--form-bg);
+    border: 1.5px solid var(--form-border);
+    border-radius: 8px;
+    padding: 24px 32px;
+    box-sizing: border-box;
+}
+
+/* Comment Form */
+.comment-form {
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.comment-form label {
+    display: block;
+    font-weight: 600;
+    color: var(--form-label);
+    margin-bottom: 6px;
+    font-size: 1em;
+}
+
+.comment-form input[type="text"],
+.comment-form textarea {
+    width: 100%;
+    background: var(--form-input-bg);
+    border: 1px solid var(--form-input-border);
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    color: var(--color-text-light);
+    font-size: 1.1em;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.comment-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.comment-form input[type="text"]:focus,
+.comment-form textarea:focus {
+    border-color: var(--form-input-focus);
+    outline: none;
+}
+
+.comment-form button[type="submit"] {
+    width: 100%;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: 1px solid var(--form-input-border);
+    border-radius: 4px;
+    padding: 12px 0;
+    font-weight: 700;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.comment-form button[type="submit"]:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-text);
+}
+
+/* =============================================================================
+   COMMENTS LIST
+   ============================================================================= */
+
+.comments-list {
+    max-width: 540px;
+    margin: 0 auto 40px auto;
+}
+
+.comment-block {
+    background: var(--dashboard-alt);
+    border: 1.5px solid var(--dashboard-border);
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.comment-block strong {
+    font-weight: 700;
+    color: var(--form-label);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 1em;
+}
+
+.comment-block .comment-time {
+    color: var(--color-accent-light);
+    font-size: 0.85em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.comment-block p {
+    color: var(--dashboard-text);
+    font-size: 1em;
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+/* =============================================================================
+   CURRENT USER INFO
+   ============================================================================= */
+
+.current-user-info {
+    background: var(--dashboard-alt);
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid var(--dashboard-border);
+}
+
+.current-user-info strong {
+    color: var(--form-label);
+    font-size: 0.95em;
+}
+
+/* =============================================================================
+   COMMENT HEADER
+   ============================================================================= */
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* =============================================================================
+   ADDITIONAL DETAIL PAGE COMPONENTS
+   ============================================================================= */
+
+/* Current User Info Display */
+.current-user-info {
+    background: var(--dashboard-alt);
+    padding: 10px 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid var(--dashboard-border);
+}
+
+.current-user-info strong {
+    color: var(--form-label);
+    font-size: 0.95em;
+}
+
+/* Comment Time Display */
+.comment-time {
+    color: var(--color-accent-light);
+    font-size: 0.85em;
+}
+
+/* Comment Content */
+.comment-content p {
+    margin: 0;
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+/* Login Prompt for Non-Authenticated Users */
+.login-prompt {
+    background: var(--dashboard-alt);
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid var(--dashboard-border);
+}
+
+.login-prompt p {
+    margin: 0;
+    color: var(--color-text-light);
+}
+
+.login-prompt a {
+    color: var(--theme-purple);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}

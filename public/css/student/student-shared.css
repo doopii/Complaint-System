@@ -1,0 +1,88 @@
+/* =============================================================================
+   STUDENT SHARED STYLES
+   ============================================================================= */
+/* This file contains styles shared across all student pages.
+   Managed by: Student Complaint Handler (Member 2) */
+
+/* =============================================================================
+   STUDENT-SPECIFIC COMPONENTS
+   ============================================================================= */
+
+/* Student ID Display */
+.student-id-display {
+    background: var(--dashboard-alt);
+    border: 1px solid var(--form-border);
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 4px;
+    color: var(--color-text-light);
+    font-size: 1.15em;
+    font-family: inherit;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* =============================================================================
+   DETAILS PAGE BLOCKS
+   ============================================================================= */
+
+.details-row {
+    display: flex;
+    flex-direction: column;
+    background: var(--dashboard-alt);
+    border: 1.5px solid var(--dashboard-border);
+    border-radius: 4px;
+    padding: 12px 18px 9px 18px;
+    margin-bottom: 16px;
+    gap: 3px;
+}
+
+.details-label {
+    font-weight: 600;
+    color: var(--form-label);
+    font-size: 1em;
+    margin-bottom: 1px;
+}
+
+.details-value {
+    color: var(--dashboard-text);
+    word-break: break-word;
+    text-align: left;
+    font-size: 1em;
+    max-width: 100%;
+    margin-left: 0;
+}
+
+
+/* Recent activity list */
+.activity-list { list-style: none; padding: 0; margin: 0; }
+.activity-list li { 
+    padding: 10px 12px;
+    border: 1px solid var(--dashboard-border);
+    background: var(--dashboard-alt);
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.activity-list a { color: var(--form-label); font-weight: 600; }
+.activity-list .activity-meta { color: var(--color-accent-light); margin-left: 6px; }
+
+/* Help cards */
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+}
+.help-card {
+    background: var(--dashboard-alt);
+    border: 1px solid var(--dashboard-border);
+    border-radius: 6px;
+    padding: 14px;
+}
+.help-card strong { color: var(--form-label); display: block; margin-bottom: 6px; }
+
+.help-card p {
+    color: var(--color-accent-light) !important;
+    font-size: 0.9em !important;
+    margin: 0 !important;
+    line-height: 1.4;
+}

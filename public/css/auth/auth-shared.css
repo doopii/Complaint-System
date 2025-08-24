@@ -1,0 +1,53 @@
+/* =============================================================================
+   AUTHENTICATION SHARED STYLES
+   ============================================================================= */
+/* This file contains styles shared across all authentication pages.
+   Managed by: Student Complaint Handler (Member 2) */
+
+/* =============================================================================
+   AUTH LINKS & NAVIGATION
+   ============================================================================= */
+
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--dashboard-border);
+}
+
+.auth-links a {
+    color: var(--button-bg);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* =============================================================================
+   AUTH-SPECIFIC FORM ELEMENTS
+   ============================================================================= */
+
+/* Checkbox Styling */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+/* Special styling for select elements in auth forms */
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    background: var(--form-input-bg);
+    border: 1px solid var(--form-input-border);
+    border-radius: 4px;
+    color: var(--color-text-light);
+}

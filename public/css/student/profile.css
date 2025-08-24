@@ -1,0 +1,269 @@
+/* Student Profile – Revised to match shared dark theme and variables */
+
+/* Page header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.page-title {
+    color: var(--form-label);
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.page-subtitle {
+    color: var(--color-accent-light);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* 2-column layout (photo | form) */
+.profile-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Card base */
+.profile-card {
+    background: var(--form-bg);
+    border: 1px solid var(--form-border);
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.action-card.profile-card {
+    border: 1px solid var(--form-border);
+    border-left: 4px solid #fd7e14;
+}
+
+/* Profile picture panel */
+.profile-picture-section {
+    position: sticky;
+    top: 2rem;
+}
+.profile-picture-section.profile-card { /* apply card base */
+    padding: 28px 24px;
+    text-align: center;
+}
+
+.profile-picture-container { margin-bottom: 1rem; }
+
+.profile-picture,
+.profile-picture-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    border: 3px solid var(--theme-purple);
+    box-shadow: 0 0 0 3px rgba(116,94,255,0.15);
+}
+.profile-picture-placeholder {
+    background: linear-gradient(135deg, var(--theme-purple), var(--theme-purple-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-initials {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.profile-info-preview {
+    border-top: 1px solid var(--form-border);
+    padding-top: 1rem;
+}
+.profile-name {
+    color: var(--form-label);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0.25rem 0 0.25rem 0;
+}
+.profile-id,
+.profile-email {
+    color: var(--dashboard-text);
+    opacity: 0.85;
+    margin: 0.2rem 0;
+    font-size: 0.95rem;
+}
+
+/* Form panel */
+
+.profile-form { max-width: none; }
+
+.form-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--form-border);
+}
+.form-section:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+.section-title {
+    color: var(--form-label);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--theme-purple);
+    display: inline-block;
+}
+
+/* Inputs – align with shared components.css */
+.form-group { margin-bottom: 1rem; }
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: var(--form-label);
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea,
+.form-group .file-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--form-input-border);
+    background: var(--form-input-bg);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: var(--dashboard-text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box; /* Ensure consistent sizing */
+    min-height: 42px; /* Consistent height for all inputs */
+}
+
+/* Specific styles for different input types */
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none; /* Remove default styling */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cccccc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px; /* Add space for dropdown arrow */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.form-group .file-input:focus {
+    border-color: var(--form-input-focus);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(204,204,204,0.15);
+}
+
+/* File input - now matches other inputs exactly */
+.file-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--form-input-border);
+    border-radius: 6px;
+    background: var(--form-input-bg);
+    text-align: left; /* Changed from center to left for consistency */
+    cursor: pointer;
+    color: var(--dashboard-text);
+    transition: border-color 0.2s, background 0.2s;
+    box-sizing: border-box;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+}
+.file-input:hover {
+    border-color: var(--form-input-focus);
+    background: #1d1d1d;
+}
+.help-text {
+    font-size: 0.9rem;
+    color: var(--color-accent-light);
+    margin: 0.4rem 0 0 0;
+}
+
+/* Actions – use shared button variables */
+.form-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--form-border);
+    margin-top: 1.25rem;
+}
+.btn-primary,
+.btn-secondary {
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid var(--form-input-border);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn-primary {
+    background: var(--button-bg);
+    color: var(--button-text);
+}
+.btn-primary:hover {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-text);
+}
+.btn-secondary {
+    background: transparent;
+    color: var(--dashboard-text);
+    border-color: var(--form-border);
+}
+.btn-secondary:hover {
+    background: var(--dashboard-row-hover);
+    border-color: var(--dashboard-border);
+}
+
+/* Feedback messages (reuse palette) */
+.success-message {
+    color: var(--success-text);
+    background: var(--success-bg);
+    border: 1px solid var(--success-border);
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.error-message {
+    background: var(--error-bg);
+    color: var(--error-text);
+    border: 1px solid var(--error-border);
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 1rem;
+}
+.error-message ul { margin: 0; padding-left: 1.2rem; }
+.error-message li { margin: 0.25rem 0; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-content { grid-template-columns: 1fr; gap: 1rem; }
+    .profile-picture-section { position: static; }
+    .form-actions { flex-direction: column; }
+    .btn-primary, .btn-secondary { width: 100%; }
+    .profile-picture, .profile-picture-placeholder { width: 120px; height: 120px; }
+    .profile-initials { font-size: 2.2rem; }
+}
+@media (max-width: 480px) {
+    .profile-card { padding: 18px; }
+    .page-title { font-size: 1.6rem; }
+    .section-title { font-size: 1.05rem; }
+}

@@ -1,0 +1,83 @@
+/* =============================================================================
+   SHARED CSS VARIABLES
+   ============================================================================= */
+/* This file contains all CSS custom properties (variables) used across the app.
+   ALL TEAM MEMBERS should use these variables for consistency. */
+
+@font-face {
+    font-family: 'AppRegular';
+    src: url('/pixel.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global font application */
+html, body, button, input, select, textarea, a, th, td, label, h1, h2, h3, h4, h5, h6, span, p, div {
+    font-family: 'AppRegular', monospace !important;
+    font-weight: normal;
+}
+
+:root {
+    /* =============================================================================
+       BASE COLORS - Used across all components
+       ============================================================================= */
+    --color-bg-dark: #181818;
+    --color-bg-darker: #232323;
+    --color-bg-light: #ffffff;
+    --color-accent: #bbbbbb;
+    --color-accent-light: #cccccc;
+    --color-text-light: #ffffff;
+    --color-text-dark: #181818;
+
+    /* =============================================================================
+       FORM COMPONENTS - For all forms across the app
+       ============================================================================= */
+    --form-bg: var(--color-bg-darker);
+    --form-border: var(--color-accent);
+    --form-label: var(--color-text-light);
+    --form-input-bg: var(--color-bg-dark);
+    --form-input-border: var(--color-accent);
+    --form-input-focus: var(--color-accent-light);
+    --form-helper: var(--color-accent-light);
+
+    /* =============================================================================
+       BUTTON COMPONENTS - For all buttons across the app
+       ============================================================================= */
+    --button-bg: var(--color-bg-light);
+    --button-text: var(--color-text-dark);
+    --button-hover-bg: var(--color-accent);
+    --button-hover-text: var(--color-text-dark);
+
+    /* =============================================================================
+       DASHBOARD COMPONENTS - For tables, cards, etc.
+       ============================================================================= */
+    --dashboard-bg: var(--color-bg-dark);
+    --dashboard-alt: #1f1f1f;
+    --dashboard-header-bg: var(--color-bg-light);
+    --dashboard-header-color: var(--color-text-dark);
+    --dashboard-row-hover: #2c2c2c;
+    --dashboard-border: var(--color-accent);
+    --dashboard-text: var(--color-text-light);
+    --dashboard-no-data: var(--color-accent);
+
+    /* =============================================================================
+       THEME COLORS - For navbar and special buttons
+       ============================================================================= */
+    --theme-gray: #dbdbdb;
+    --theme-border: #222;
+    --theme-black: #000;
+    --theme-shadow: #888;
+    --theme-purple: #745eff;
+    --theme-purple-dark: #4e32b8;
+
+    /* =============================================================================
+       SUCCESS/ERROR MESSAGES - For alerts and notifications
+       ============================================================================= */
+    --success-bg: var(--color-bg-darker);
+    --success-border: var(--color-accent);
+    --success-text: var(--color-text-light);
+    
+    --error-bg: #f8d7da;
+    --error-border: #f5c6cb;
+    --error-text: #721c24;
+}
