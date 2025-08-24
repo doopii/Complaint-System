@@ -1,6 +1,3 @@
-Here’s a **full but still simple `README.md`** you can drop into your FixIt repo. It keeps things minimal, includes installation steps, and has a screenshots section ready:
-
-````markdown
 # FixIt
 
 FixIt is a Laravel-based **Campus Complaint Management System**.  
@@ -30,7 +27,6 @@ It helps students to submit complaints, track their progress, and interact with 
    ```bash
    git clone https://github.com/doopii/FixIt.git
    cd FixIt
-````
 
 2. Install dependencies:
 
