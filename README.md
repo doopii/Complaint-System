@@ -1,64 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Here’s a **full but still simple `README.md`** you can drop into your FixIt repo. It keeps things minimal, includes installation steps, and has a screenshots section ready:
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+````markdown
+# FixIt
 
-## About Laravel
+FixIt is a Laravel-based **Campus Complaint Management System**.  
+It helps students to submit complaints, track their progress, and interact with the campus community.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Features
+- 📝 Submit and manage complaints  
+- 🗂️ Filter complaints by category, status, and priority  
+- 💬 Comment and upvote complaints in the community page  
+- 📊 Dashboard with quick actions and filters  
+- 👤 Student profile with picture upload, course selection, year level, and bio  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Prerequisites
+- PHP 8.2+  
+- Composer  
+- Node.js + npm  
+- MySQL/MariaDB  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Steps
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/doopii/FixIt.git
+   cd FixIt
+````
 
-## Laravel Sponsors
+2. Install dependencies:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+   ```bash
+   composer install
+   npm install
+   ```
 
-### Premium Partners
+3. Copy environment file and generate key:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Contributing
+4. Update `.env` with your database details:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=fixit
+   DB_USERNAME=root
+   DB_PASSWORD=yourpassword
+   ```
 
-## Code of Conduct
+5. Run migrations:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+   ```bash
+   php artisan migrate
+   ```
 
-## Security Vulnerabilities
+6. Link storage for uploads (profile pictures, etc.):
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   ```bash
+   php artisan storage:link
+   ```
 
-## License
+7. Start the dev server:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+   ```bash
+   php artisan serve
+   ```
+
+---
+
+## Screenshots
+
+### Home
+<img width="1880" height="885" alt="image" src="https://github.com/user-attachments/assets/6de17af7-4af0-47b6-8d8e-0430c027c491" />
+
+### My Complaints
+<img width="1880" height="891" alt="image" src="https://github.com/user-attachments/assets/92a25238-17d5-499e-8df4-4f1db508956a" />
+
+### Complaint Detail
+<img width="1893" height="901" alt="image" src="https://github.com/user-attachments/assets/be14ed95-914c-43ea-805c-23b41ce82e48" />
+
+### Profile
+<img width="1899" height="903" alt="image" src="https://github.com/user-attachments/assets/ff9a8c69-a35b-4ea2-aaad-b7ea46c809a1" />
+
+### Community
+<img width="1887" height="902" alt="image" src="https://github.com/user-attachments/assets/2a843bf0-10e3-41f5-86db-3cde4dd78fed" />
+
+---
+
